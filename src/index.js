@@ -1,2 +1,2 @@
 import './js/componentes';
-import './styles.css';
+import './styles.scss';

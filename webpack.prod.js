@@ -26,18 +26,20 @@ module.exports = {
                 ]
             },
             {
-                test: /\.css$/,
-                exclude: /styles\.css$/,
+                test: /\.(scss|css)$/,
+                exclude: /styles\.scss$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
             {
-                test: /styles\.css$/,
+                test: /styles\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
             {
@@ -72,7 +74,7 @@ module.exports = {
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[hash].css',
+            filename: '[name].css',
             ignoreOrder: false
         }),
         new CopyPlugin({
