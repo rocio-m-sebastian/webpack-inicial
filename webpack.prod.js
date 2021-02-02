@@ -55,6 +55,11 @@ module.exports = {
                 ]
             },
             {
+                test: /\.twig$/,
+                exclude: /node_modules/,
+                use: 'twigjs-loader',
+            },
+            {
                 test: /\.(png|svg|jpe?g|gif)$/,
                 use: [
                     {
@@ -75,7 +80,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: './src/index.html',
+            template: './src/index.twig',
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
